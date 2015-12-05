@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AdFooter
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        UINavigationBar.appearance().barTintColor = UIColor.grayColor()
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        if let navController = storyboard.instantiateInitialViewController() as? UINavigationController {
+            AdFooter.shared.adMobAdUnitId = "ADMOB_AD_UNIT_ID"
+            window?.rootViewController = AdFooter.shared.wrap(navController)
+        }
+    
+        window?.makeKeyAndVisible()
         return true
     }
 
