@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = "AdFooter"
   s.version          = "0.1.0"
-  s.summary          = "A short description of AdFooter."
+  s.summary          = "iAd and AdMob on footer."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,16 +17,17 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+                       The swift library to add iAd and AdMob to your view controller.
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/AdFooter"
+  s.homepage         = "https://github.com/tnantoka/AdFooter"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "tnantoka" => "tnantoka@bornneet.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/AdFooter.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/tnantoka/AdFooter.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/tnantoka'
 
-  s.platform     = :ios, '8.0'
+  s.platform     = :ios, '9.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
@@ -37,4 +38,6 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+
+  s.vendored_frameworks = 'Pod/Frameworks/GoogleMobileAds.framework'
 end

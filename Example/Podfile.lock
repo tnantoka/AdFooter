@@ -1,0 +1,14 @@
+PODS:
+  - AdFooter (0.1.0)
+
+DEPENDENCIES:
+  - AdFooter (from `../`)
+
+EXTERNAL SOURCES:
+  AdFooter:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AdFooter: 67106baca3443617d75b204ee400653fc7c6d71f
+
+COCOAPODS: 0.39.0
