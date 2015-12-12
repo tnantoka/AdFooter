@@ -63,6 +63,10 @@ class AdFooterViewController: UIViewController, ADBannerViewDelegate, GADBannerV
         originalController.view.frame = contentFrame
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return originalController.preferredStatusBarStyle()
+    }
+
     // MARK: - Utility
     
     func createIAd() {
