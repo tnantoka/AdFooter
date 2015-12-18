@@ -45,3 +45,4 @@ https://github.com/chrisjp/CJPAdController
 ## License
 
 AdFooter is available under the MIT license. See the LICENSE file for more info.
+**`GoogleMobileAds.framework` has its own license!**
