@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             AdFooter.shared.adMobAdUnitId = "ADMOB_AD_UNIT_ID"
             //AdFooter.shared.adMobAdUnitId = "ca-app-pub-3940256099942544/2934735716" // https://developers.google.com/admob/ios/quick-start
             window?.rootViewController = AdFooter.shared.wrap(navController)
+            //window?.rootViewController = AdFooter.shared.wrap(navController, withIAd: false)
         }
     
         window?.makeKeyAndVisible()

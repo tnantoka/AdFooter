@@ -14,12 +14,15 @@ import iAd
 class AdFooterViewController: UIViewController, ADBannerViewDelegate, GADBannerViewDelegate {
     
     let originalController: UIViewController
+    let withIAd: Bool
     
     var iAd = Ad<ADBannerView>()
     var adMob = Ad<GADBannerView>()
     
-    init(originalController: UIViewController) {
+    
+    init(originalController: UIViewController, withIAd: Bool) {
         self.originalController = originalController
+        self.withIAd = withIAd
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -42,7 +45,7 @@ class AdFooterViewController: UIViewController, ADBannerViewDelegate, GADBannerV
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        createIAd()
+        withIAd ? createIAd() : createAdMob()
     }
     
     override func viewDidLayoutSubviews() {
