@@ -28,8 +28,7 @@ class AdFooterViewController: UIViewController, ADBannerViewDelegate, GADBannerV
     
     override func loadView() {
         let view = UIView(frame: UIScreen.mainScreen().bounds)
-
-        view.backgroundColor = UIColor.redColor()
+        view.backgroundColor = .blackColor()
         
         addChildViewController(originalController)
         view.addSubview(originalController.view)
