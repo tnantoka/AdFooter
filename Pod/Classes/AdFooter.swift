@@ -14,7 +14,11 @@ public class AdFooter {
     public var adMobAdUnitId = ""
     
     public func wrap(originalController: UIViewController) -> UIViewController {
-        let adFooterController = AdFooterViewController(originalController: originalController)
+        return wrap(originalController, withIAd: true)
+    }
+    
+    public func wrap(originalController: UIViewController, withIAd: Bool) -> UIViewController {
+        let adFooterController = AdFooterViewController(originalController: originalController, withIAd: withIAd)
         return adFooterController
     }
 }
