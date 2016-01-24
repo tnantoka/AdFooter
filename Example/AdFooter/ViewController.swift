@@ -8,6 +8,8 @@
 
 import UIKit
 
+import AdFooter
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -20,5 +22,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func toggleButtonDidTap(sender: AnyObject) {
+        AdFooter.shared.hidden = !AdFooter.shared.hidden
+    }
 }
 

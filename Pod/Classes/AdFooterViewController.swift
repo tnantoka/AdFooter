@@ -19,6 +19,16 @@ class AdFooterViewController: UIViewController, ADBannerViewDelegate, GADBannerV
     var iAd = Ad<ADBannerView>()
     var adMob = Ad<GADBannerView>()
     
+    var hidden = false {
+        didSet {
+            if !hidden {
+                createAd()
+            } else {
+                removeAd()
+                view.setNeedsLayout()
+            }
+        }
+    }
     
     init(originalController: UIViewController, withIAd: Bool) {
         self.originalController = originalController
@@ -44,22 +54,24 @@ class AdFooterViewController: UIViewController, ADBannerViewDelegate, GADBannerV
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        withIAd ? createIAd() : createAdMob()
+        createAd()
     }
     
     override func viewDidLayoutSubviews() {
         var contentFrame = view.frame
         
-        var bannerView: UIView?
-        if iAd.shown {
-            bannerView = iAd.view
-        } else if adMob.shown {
-            bannerView = adMob.view
-        }
-        if let bannerView = bannerView {
-            contentFrame.size.height -= CGRectGetHeight(bannerView.frame)
-            bannerView.frame.origin.y = CGRectGetHeight(contentFrame)
-            view.bringSubviewToFront(bannerView)
+        if !hidden {
+            var bannerView: UIView?
+            if iAd.shown {
+                bannerView = iAd.view
+            } else if adMob.shown {
+                bannerView = adMob.view
+            }
+            if let bannerView = bannerView {
+                contentFrame.size.height -= CGRectGetHeight(bannerView.frame)
+                bannerView.frame.origin.y = CGRectGetHeight(contentFrame)
+                view.bringSubviewToFront(bannerView)
+            }
         }
         
         originalController.view.frame = contentFrame
@@ -71,11 +83,29 @@ class AdFooterViewController: UIViewController, ADBannerViewDelegate, GADBannerV
 
     // MARK: - Utility
     
+    func createAd() {
+        removeAd()
+        if !hidden {
+            withIAd ? createIAd() : createAdMob()
+        }
+    }
+
+    func removeAd() {
+        removeIAd()
+        removeAdMob()
+    }
+
     func createIAd() {
         let bannerView = ADBannerView(adType: .Banner)
         bannerView.delegate = self
         view.addSubview(bannerView)
         iAd.view = bannerView
+    }
+
+    func removeIAd() {
+        iAd.shown = false
+        iAd.view?.delegate = self
+        iAd.view?.removeFromSuperview()
     }
 
     func createAdMob() {
