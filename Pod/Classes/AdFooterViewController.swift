@@ -131,7 +131,9 @@ class AdFooterViewController: UIViewController, ADBannerViewDelegate, GADBannerV
 
     func bannerViewDidLoadAd(banner: ADBannerView!) {
         removeAdMob()
-        iAd.shown = true
+        if !hidden {
+            iAd.shown = true
+        }
         view.setNeedsLayout()
     }
     
@@ -144,7 +146,9 @@ class AdFooterViewController: UIViewController, ADBannerViewDelegate, GADBannerV
     // MARK: - GADBannerViewDelegate
     
     func adViewDidReceiveAd(bannerView: GADBannerView!) {
-        adMob.shown = true
+        if !hidden {
+            adMob.shown = true
+        }
         view.setNeedsLayout()
     }
     
