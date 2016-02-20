@@ -21,11 +21,7 @@ public class AdFooter {
     var controllers = [Weak<AdFooterViewController>]()
     
     public func wrap(originalController: UIViewController) -> UIViewController {
-        return wrap(originalController, withIAd: true)
-    }
-    
-    public func wrap(originalController: UIViewController, withIAd: Bool) -> UIViewController {
-        let adFooterController = AdFooterViewController(originalController: originalController, withIAd: withIAd)
+        let adFooterController = AdFooterViewController(originalController: originalController)
         adFooterController.hidden = hidden
         controllers.append(Weak(value: adFooterController))
         return adFooterController

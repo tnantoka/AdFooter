@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = "AdFooter"
   s.version          = "7.6.0"
-  s.summary          = "iAd and AdMob on footer."
+  s.summary          = "AdMob on footer."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
-                       The swift library to add iAd and AdMob to your view controller.
+                       The swift library to add AdMob to your view controller.
                        DESC
 
   s.homepage         = "https://github.com/tnantoka/AdFooter"

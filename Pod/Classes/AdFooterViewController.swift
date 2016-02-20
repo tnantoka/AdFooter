@@ -9,15 +9,16 @@
 import UIKit
 
 import GoogleMobileAds
-import iAd
 
-class AdFooterViewController: UIViewController, ADBannerViewDelegate, GADBannerViewDelegate {
+class AdFooterViewController: UIViewController, GADBannerViewDelegate {
     
     let originalController: UIViewController
-    let withIAd: Bool
     
-    var iAd = Ad<ADBannerView>()
     var adMob = Ad<GADBannerView>()
+    
+    var adMobSize: GADAdSize {
+        return UIInterfaceOrientationIsPortrait(interfaceOrientation) ? kGADAdSizeSmartBannerPortrait : kGADAdSizeSmartBannerLandscape
+    }
     
     var hidden = false {
         didSet {
@@ -30,9 +31,8 @@ class AdFooterViewController: UIViewController, ADBannerViewDelegate, GADBannerV
         }
     }
     
-    init(originalController: UIViewController, withIAd: Bool) {
+    init(originalController: UIViewController) {
         self.originalController = originalController
-        self.withIAd = withIAd
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -62,10 +62,12 @@ class AdFooterViewController: UIViewController, ADBannerViewDelegate, GADBannerV
         
         if !hidden {
             var bannerView: UIView?
-            if iAd.shown {
-                bannerView = iAd.view
-            } else if adMob.shown {
+            if adMob.shown {
                 bannerView = adMob.view
+                
+                if let adMobView = adMob.view {
+                    adMobView.adSize = adMobSize
+                }
             }
             if let bannerView = bannerView {
                 contentFrame.size.height -= CGRectGetHeight(bannerView.frame)
@@ -86,30 +88,16 @@ class AdFooterViewController: UIViewController, ADBannerViewDelegate, GADBannerV
     func createAd() {
         removeAd()
         if !hidden {
-            withIAd ? createIAd() : createAdMob()
+            createAdMob()
         }
     }
 
     func removeAd() {
-        removeIAd()
         removeAdMob()
     }
 
-    func createIAd() {
-        let bannerView = ADBannerView(adType: .Banner)
-        bannerView.delegate = self
-        view.addSubview(bannerView)
-        iAd.view = bannerView
-    }
-
-    func removeIAd() {
-        iAd.shown = false
-        iAd.view?.delegate = self
-        iAd.view?.removeFromSuperview()
-    }
-
     func createAdMob() {
-        let bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        let bannerView = GADBannerView(adSize: adMobSize)
         bannerView.delegate = self
         view.addSubview(bannerView)
         adMob.view = bannerView
@@ -125,22 +113,6 @@ class AdFooterViewController: UIViewController, ADBannerViewDelegate, GADBannerV
         adMob.shown = false
         adMob.view?.delegate = self
         adMob.view?.removeFromSuperview()
-    }
-    
-    // MARK: - ADBannerViewDelegate
-
-    func bannerViewDidLoadAd(banner: ADBannerView!) {
-        removeAdMob()
-        if !hidden {
-            iAd.shown = true
-        }
-        view.setNeedsLayout()
-    }
-    
-    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        iAd.shown = false
-        
-        createAdMob()
     }
     
     // MARK: - GADBannerViewDelegate
