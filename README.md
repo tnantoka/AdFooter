@@ -31,8 +31,13 @@ AdFooter is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "AdFooter"
+pod "AdFooter", :head
 ```
+
+## AddFooter on App Store
+
+- http://remaining.bornneet.com/
+- http://www.140note.com/
 
 ## Author
 

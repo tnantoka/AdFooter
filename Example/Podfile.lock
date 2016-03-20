@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AdFooter: 48c286ea2d49ca7414a976ab8dde32d754df82bb
+  AdFooter: 91833675a90defc5883f870c63c58d49f4ddf3f9
 
 COCOAPODS: 0.39.0
