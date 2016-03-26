@@ -41,7 +41,7 @@ pod "AdFooter", :head
 
 ## Author
 
-tnantoka
+[tnantoka](https://twitter.com/tnantoka)
 
 ## Acknowledgement
 
