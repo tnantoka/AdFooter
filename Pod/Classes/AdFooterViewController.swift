@@ -17,7 +17,7 @@ class AdFooterViewController: UIViewController, GADBannerViewDelegate {
     var adMob = Ad<GADBannerView>()
     
     var adMobSize: GADAdSize {
-        return UIInterfaceOrientationIsPortrait(interfaceOrientation) ? kGADAdSizeSmartBannerPortrait : kGADAdSizeSmartBannerLandscape
+        return UIInterfaceOrientationIsPortrait(UIApplication.sharedApplication().statusBarOrientation) ? kGADAdSizeSmartBannerPortrait : kGADAdSizeSmartBannerLandscape
     }
     
     var hidden = false {

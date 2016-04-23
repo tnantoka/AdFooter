@@ -7,6 +7,4 @@ end
 
 target 'AdFooter_Tests', :exclusive => true do
   pod "AdFooter", :path => "../"
-
-  
 end

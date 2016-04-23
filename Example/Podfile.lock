@@ -1,5 +1,5 @@
 PODS:
-  - AdFooter (7.6.0)
+  - AdFooter (7.7.1)
 
 DEPENDENCIES:
   - AdFooter (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AdFooter: 91833675a90defc5883f870c63c58d49f4ddf3f9
+  AdFooter: 506a72c8afdb2a821e89f16108e2b233939fb228
 
 COCOAPODS: 0.39.0
