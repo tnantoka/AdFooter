@@ -98,15 +98,15 @@ class AdFooterViewController: UIViewController, GADBannerViewDelegate {
 
     func createAdMob() {
         let bannerView = GADBannerView(adSize: adMobSize)
-        bannerView?.delegate = self
-        view.addSubview(bannerView!)
+        bannerView.delegate = self
+        view.addSubview(bannerView)
         adMob.view = bannerView
         
-        bannerView?.adUnitID = AdFooter.shared.adMobAdUnitId
-        bannerView?.rootViewController = self
+        bannerView.adUnitID = AdFooter.shared.adMobAdUnitId
+        bannerView.rootViewController = self
         let req = GADRequest()
         req.testDevices = [kGADSimulatorID]
-        bannerView?.load(req)
+        bannerView.load(req)
     }
 
     func removeAdMob() {
@@ -117,14 +117,14 @@ class AdFooterViewController: UIViewController, GADBannerViewDelegate {
     
     // MARK: - GADBannerViewDelegate
     
-    func adViewDidReceiveAd(_ bannerView: GADBannerView!) {
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         if !hidden {
             adMob.shown = true
         }
         view.setNeedsLayout()
     }
     
-    func adView(_ bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
         adMob.shown = false
     }
 }
