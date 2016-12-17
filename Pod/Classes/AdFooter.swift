@@ -8,11 +8,11 @@
 
 import UIKit
 
-public class AdFooter {
-    public static let shared = AdFooter()
+open class AdFooter {
+    open static let shared = AdFooter()
     
-    public var adMobAdUnitId = ""
-    public var hidden = false {
+    open var adMobAdUnitId = ""
+    open var hidden = false {
         didSet {
             controllers.forEach { $0.value?.hidden = hidden }
         }
@@ -20,7 +20,7 @@ public class AdFooter {
     
     var controllers = [Weak<AdFooterViewController>]()
     
-    public func wrap(originalController: UIViewController) -> UIViewController {
+    open func wrap(_ originalController: UIViewController) -> UIViewController {
         let adFooterController = AdFooterViewController(originalController: originalController)
         adFooterController.hidden = hidden
         controllers.append(Weak(value: adFooterController))

@@ -1,10 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'AdFooter_Example', :exclusive => true do
+target 'AdFooter_Example' do
   pod "AdFooter", :path => "../"
-end
 
-target 'AdFooter_Tests', :exclusive => true do
-  pod "AdFooter", :path => "../"
+  target 'AdFooter_Tests' do
+    inherit! :search_paths
+  end
 end

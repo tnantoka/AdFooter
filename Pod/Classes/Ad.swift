@@ -9,12 +9,12 @@
 struct Ad<T: UIView> {
     var shown = false {
         didSet {
-            view?.hidden = !shown
+            view?.isHidden = !shown
         }
     }
     var view: T? {
         didSet {
-            view?.hidden = true
+            view?.isHidden = true
         }
     }
 }
