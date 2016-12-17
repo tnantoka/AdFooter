@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func toggleButtonDidTap(sender: AnyObject) {
+    @IBAction func toggleButtonDidTap(_ sender: AnyObject) {
         AdFooter.shared.hidden = !AdFooter.shared.hidden
     }
 }

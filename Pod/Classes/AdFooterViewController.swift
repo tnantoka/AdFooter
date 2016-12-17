@@ -17,7 +17,7 @@ class AdFooterViewController: UIViewController, GADBannerViewDelegate {
     var adMob = Ad<GADBannerView>()
     
     var adMobSize: GADAdSize {
-        return UIInterfaceOrientationIsPortrait(UIApplication.sharedApplication().statusBarOrientation) ? kGADAdSizeSmartBannerPortrait : kGADAdSizeSmartBannerLandscape
+        return UIInterfaceOrientationIsPortrait(UIApplication.shared.statusBarOrientation) ? kGADAdSizeSmartBannerPortrait : kGADAdSizeSmartBannerLandscape
     }
     
     var hidden = false {
@@ -37,8 +37,8 @@ class AdFooterViewController: UIViewController, GADBannerViewDelegate {
     }
     
     override func loadView() {
-        let view = UIView(frame: UIScreen.mainScreen().bounds)
-        view.backgroundColor = .blackColor()
+        let view = UIView(frame: UIScreen.main.bounds)
+        view.backgroundColor = .black
         
         addChildViewController(originalController)
         view.addSubview(originalController.view)
@@ -70,17 +70,17 @@ class AdFooterViewController: UIViewController, GADBannerViewDelegate {
                 }
             }
             if let bannerView = bannerView {
-                contentFrame.size.height -= CGRectGetHeight(bannerView.frame)
-                bannerView.frame.origin.y = CGRectGetHeight(contentFrame)
-                view.bringSubviewToFront(bannerView)
+                contentFrame.size.height -= bannerView.frame.height
+                bannerView.frame.origin.y = contentFrame.height
+                view.bringSubview(toFront: bannerView)
             }
         }
         
         originalController.view.frame = contentFrame
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return originalController.preferredStatusBarStyle()
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return originalController.preferredStatusBarStyle
     }
 
     // MARK: - Utility
@@ -98,15 +98,15 @@ class AdFooterViewController: UIViewController, GADBannerViewDelegate {
 
     func createAdMob() {
         let bannerView = GADBannerView(adSize: adMobSize)
-        bannerView.delegate = self
-        view.addSubview(bannerView)
+        bannerView?.delegate = self
+        view.addSubview(bannerView!)
         adMob.view = bannerView
         
-        bannerView.adUnitID = AdFooter.shared.adMobAdUnitId
-        bannerView.rootViewController = self
+        bannerView?.adUnitID = AdFooter.shared.adMobAdUnitId
+        bannerView?.rootViewController = self
         let req = GADRequest()
         req.testDevices = [kGADSimulatorID]
-        bannerView.loadRequest(req)
+        bannerView?.load(req)
     }
 
     func removeAdMob() {
@@ -117,14 +117,14 @@ class AdFooterViewController: UIViewController, GADBannerViewDelegate {
     
     // MARK: - GADBannerViewDelegate
     
-    func adViewDidReceiveAd(bannerView: GADBannerView!) {
+    func adViewDidReceiveAd(_ bannerView: GADBannerView!) {
         if !hidden {
             adMob.shown = true
         }
         view.setNeedsLayout()
     }
     
-    func adView(bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
+    func adView(_ bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
         adMob.shown = false
     }
 }
