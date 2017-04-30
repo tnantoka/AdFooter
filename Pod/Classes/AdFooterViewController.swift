@@ -10,22 +10,22 @@ import UIKit
 
 import GoogleMobileAds
 
-class AdFooterViewController: UIViewController, GADBannerViewDelegate {
+class AdFooterViewController: UIViewController {
     
-    let originalController: UIViewController
+    private let originalController: UIViewController
     
-    var adMob = Ad<GADBannerView>()
+    fileprivate var adMob = Banner<GADBannerView>()
     
-    var adMobSize: GADAdSize {
+    private var adMobSize: GADAdSize {
         return UIInterfaceOrientationIsPortrait(UIApplication.shared.statusBarOrientation) ? kGADAdSizeSmartBannerPortrait : kGADAdSizeSmartBannerLandscape
     }
     
     var hidden = false {
         didSet {
             if !hidden {
-                createAd()
+                createBanner()
             } else {
-                removeAd()
+                removeBanner()
                 view.setNeedsLayout()
             }
         }
@@ -54,7 +54,7 @@ class AdFooterViewController: UIViewController, GADBannerViewDelegate {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        createAd()
+        createBanner()
     }
     
     override func viewDidLayoutSubviews() {
@@ -85,18 +85,18 @@ class AdFooterViewController: UIViewController, GADBannerViewDelegate {
 
     // MARK: - Utility
     
-    func createAd() {
-        removeAd()
+    private func createBanner() {
+        removeBanner()
         if !hidden {
             createAdMob()
         }
     }
 
-    func removeAd() {
+    private func removeBanner() {
         removeAdMob()
     }
 
-    func createAdMob() {
+    private func createAdMob() {
         let bannerView = GADBannerView(adSize: adMobSize)
         bannerView.delegate = self
         view.addSubview(bannerView)
@@ -109,21 +109,21 @@ class AdFooterViewController: UIViewController, GADBannerViewDelegate {
         bannerView.load(req)
     }
 
-    func removeAdMob() {
+    private func removeAdMob() {
         adMob.shown = false
         adMob.view?.delegate = self
         adMob.view?.removeFromSuperview()
     }
-    
-    // MARK: - GADBannerViewDelegate
-    
+}
+
+extension AdFooterViewController: GADBannerViewDelegate {
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         if !hidden {
             adMob.shown = true
         }
         view.setNeedsLayout()
     }
-    
+
     func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
         adMob.shown = false
     }

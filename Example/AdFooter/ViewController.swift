@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        AdFooter.shared.interstitial.load()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,6 +25,10 @@ class ViewController: UIViewController {
 
     @IBAction func toggleButtonDidTap(_ sender: AnyObject) {
         AdFooter.shared.hidden = !AdFooter.shared.hidden
+    }
+
+    @IBAction func interstitialButtonDidTap(_ sender: Any) {
+        AdFooter.shared.interstitial.present(for: self)
     }
 }
 
