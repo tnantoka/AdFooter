@@ -1,12 +1,12 @@
 //
-//  Ad.swift
+//  Banner.swift
 //  Pods
 //
 //  Created by Tatsuya Tobioka on 11/30/15.
 //
 //
 
-struct Ad<T: UIView> {
+struct Banner<T: UIView> {
     var shown = false {
         didSet {
             view?.isHidden = !shown

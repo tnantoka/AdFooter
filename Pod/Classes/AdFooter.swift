@@ -17,9 +17,10 @@ open class AdFooter {
             controllers.forEach { $0.value?.hidden = hidden }
         }
     }
-    
-    var controllers = [Weak<AdFooterViewController>]()
-    
+    open let interstitial = Interstitial()
+
+    private var controllers = [Weak<AdFooterViewController>]()
+
     open func wrap(_ originalController: UIViewController) -> UIViewController {
         let adFooterController = AdFooterViewController(originalController: originalController)
         adFooterController.hidden = hidden
