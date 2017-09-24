@@ -8,9 +8,16 @@
 
 import UIKit
 
+import GoogleMobileAds
+
 open class AdFooter {
     open static let shared = AdFooter()
     
+    open var adMobApplicationId = "" {
+        didSet {
+            GADMobileAds.configure(withApplicationID: adMobAdUnitId)
+        }
+    }
     open var adMobAdUnitId = ""
     open var hidden = false {
         didSet {
