@@ -1,0 +1,6 @@
+framework module AdFooter {
+  umbrella header "AdFooter-umbrella.h"
+
+  export *
+  module * { export * }
+}
