@@ -8,9 +8,10 @@
 
 ```swift
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    window = UIWindow(frame: UIScreen.mainScreen().bounds)
+    window = UIWindow(frame: UIScreen.main.bounds)
     let navController = UINavigationController(rootViewController: ViewController())
 
+    AdFooter.shared.adMobApplicationId = "ADMOB_APPLICATION_ID"
     AdFooter.shared.adMobAdUnitId = "ADMOB_AD_UNIT_ID"
     window?.rootViewController = AdFooter.shared.wrap(navController)
 
@@ -32,6 +33,12 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'AdFooter'
+```
+
+## Carthage
+
+```swift
+github "tnantoka/AdFooter"
 ```
 
 ## AddFooter on App Store
