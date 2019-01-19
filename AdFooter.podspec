@@ -37,4 +37,6 @@ Pod::Spec.new do |s|
   # s.dependency 'AFNetworking', '~> 2.3'
 
   s.vendored_frameworks = 'Pod/Frameworks/GoogleMobileAds.framework'
+
+  s.swift_version = '4.2'
 end
