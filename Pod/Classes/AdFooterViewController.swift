@@ -17,7 +17,7 @@ class AdFooterViewController: UIViewController {
     fileprivate var adMob = Banner<GADBannerView>()
     
     private var adMobSize: GADAdSize {
-        return UIInterfaceOrientationIsPortrait(UIApplication.shared.statusBarOrientation) ? kGADAdSizeSmartBannerPortrait : kGADAdSizeSmartBannerLandscape
+        return UIApplication.shared.statusBarOrientation.isPortrait ? kGADAdSizeSmartBannerPortrait : kGADAdSizeSmartBannerLandscape
     }
     
     var hidden = false {
@@ -40,7 +40,7 @@ class AdFooterViewController: UIViewController {
         let view = UIView(frame: UIScreen.main.bounds)
         view.backgroundColor = .black
         
-        addChildViewController(originalController)
+        addChild(originalController)
         view.addSubview(originalController.view)
         
         self.view = view
@@ -72,7 +72,7 @@ class AdFooterViewController: UIViewController {
             if let bannerView = bannerView {
                 contentFrame.size.height -= bannerView.frame.height
                 bannerView.frame.origin.y = contentFrame.height
-                view.bringSubview(toFront: bannerView)
+                view.bringSubviewToFront(bannerView)
             }
         }
         

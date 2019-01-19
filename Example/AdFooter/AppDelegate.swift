@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         
@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let navController = storyboard.instantiateInitialViewController() as? UINavigationController {
             // https://firebase.google.com/docs/admob/ios/quick-start
             AdFooter.shared.adMobApplicationId = "ca-app-pub-3940256099942544~1458002511"
+
+            // https://developers.google.com/admob/ios/banner
             AdFooter.shared.adMobAdUnitId = "ca-app-pub-3940256099942544/2934735716"
 
             // https://firebase.google.com/docs/admob/ios/interstitial

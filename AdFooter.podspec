@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "AdFooter"
-  s.version          = "7.24.0"
+  s.version          = "7.37.0"
   s.summary          = "AdMob on footer."
 
 # This description is used to generate tags and improve search results.
