@@ -38,7 +38,7 @@ pod 'AdFooter'
 ## Carthage
 
 ```swift
-github "tnantoka/AdFooter"
+git "https://gitlab.com/tnantoka/adfooter"
 ```
 
 ## AddFooter on App Store

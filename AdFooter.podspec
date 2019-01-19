@@ -20,11 +20,11 @@ Pod::Spec.new do |s|
                        The swift library to add AdMob to your view controller.
                        DESC
 
-  s.homepage         = "https://github.com/tnantoka/AdFooter"
+  s.homepage         = "https://gitlab.com/tnantoka/adfooter"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "tnantoka" => "tnantoka@bornneet.com" }
-  s.source           = { :git => "https://github.com/tnantoka/AdFooter.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://gitlab.com/tnantoka/adfooter.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/tnantoka'
 
   s.platform     = :ios, '8.0'
