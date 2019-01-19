@@ -4,6 +4,11 @@
 [![License](https://img.shields.io/cocoapods/l/AdFooter.svg?style=flat)](http://cocoapods.org/pods/AdFooter)
 [![Platform](https://img.shields.io/cocoapods/p/AdFooter.svg?style=flat)](http://cocoapods.org/pods/AdFooter)
 
+## Moved to GitLab
+
+**Moved to GitLab as it reached file size limit.**  
+https://gitlab.com/tnantoka/adfooter
+
 ## Usage
 
 ```swift
