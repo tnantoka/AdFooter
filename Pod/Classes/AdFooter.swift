@@ -11,7 +11,7 @@ import UIKit
 import GoogleMobileAds
 
 open class AdFooter {
-    open static let shared = AdFooter()
+    public static let shared = AdFooter()
     
     open var adMobApplicationId = "" {
         didSet {
@@ -24,7 +24,7 @@ open class AdFooter {
             controllers.forEach { $0.value?.hidden = hidden }
         }
     }
-    open let interstitial = Interstitial()
+    public let interstitial = Interstitial()
 
     private var controllers = [Weak<AdFooterViewController>]()
 

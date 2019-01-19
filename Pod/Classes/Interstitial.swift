@@ -11,7 +11,7 @@ import Foundation
 import GoogleMobileAds
 
 open class Interstitial: NSObject {
-    open static let shared = Interstitial()
+    public static let shared = Interstitial()
 
     open var adMobAdUnitId = ""
 
