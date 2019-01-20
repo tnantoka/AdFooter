@@ -47,30 +47,30 @@
 		2FB76149C79FD6AD3943966322F5A673 /* Pods-AdFooter_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AdFooter_Example-frameworks.sh"; sourceTree = "<group>"; };
 		4C1F0553356CEB3E5C857B2944EDA5AF /* Pods-AdFooter_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AdFooter_Tests.modulemap"; sourceTree = "<group>"; };
 		50833462EDF6B8569FD076F6FBB2C58E /* Pods-AdFooter_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AdFooter_Example.modulemap"; sourceTree = "<group>"; };
-		52191AE88DE229D7ABBF32A8C5436756 /* AdFooter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = AdFooter.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		52191AE88DE229D7ABBF32A8C5436756 /* AdFooter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = AdFooter.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5600BC1BAA96580511BADEB256B77BED /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		562F89FF597D1394907C4E9E9BA6F484 /* Pods-AdFooter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AdFooter_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5DE50BD3150C74077942B0E6171D1038 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5EC8209BBD7FF504019594905752A92C /* AdFooter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdFooter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		623C05B652015F5D66706EE145F53928 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5EC8209BBD7FF504019594905752A92C /* AdFooter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AdFooter.framework; path = AdFooter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		623C05B652015F5D66706EE145F53928 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		657F15FB5676AF1490023399D8F6DFB1 /* Pods-AdFooter_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AdFooter_Tests-dummy.m"; sourceTree = "<group>"; };
 		66723FC79757CA2F262FBC0F4239B369 /* Pods-AdFooter_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AdFooter_Example-resources.sh"; sourceTree = "<group>"; };
 		6B89511A13426CD8E3C666F8901294D5 /* Weak.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Weak.swift; path = Pod/Classes/Weak.swift; sourceTree = "<group>"; };
-		6E6E1E72F4C2E680533FDFCF37858ACC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		6E6E1E72F4C2E680533FDFCF37858ACC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		74EFC704DE4807B6B18880C661268B82 /* Pods-AdFooter_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AdFooter_Example-umbrella.h"; sourceTree = "<group>"; };
 		7C616E4B2282A946EF6ED12A66F32118 /* AdFooter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AdFooter-umbrella.h"; sourceTree = "<group>"; };
-		83BDB29AD36EF7342408D0E8184695F3 /* Pods_AdFooter_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdFooter_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83BDB29AD36EF7342408D0E8184695F3 /* Pods_AdFooter_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AdFooter_Tests.framework; path = "Pods-AdFooter_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		851084BB3DCC5933F472E84B5CDD6899 /* AdFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdFooter.swift; path = Pod/Classes/AdFooter.swift; sourceTree = "<group>"; };
 		8957E44128CE2FAD9F4C53E24E3DCA97 /* Pods-AdFooter_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AdFooter_Example.release.xcconfig"; sourceTree = "<group>"; };
 		938BD36A3152386519FE017915EB7D37 /* Pods-AdFooter_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AdFooter_Example-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93DF328AC13D940116AF592C6304A4CF /* Banner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Banner.swift; path = Pod/Classes/Banner.swift; sourceTree = "<group>"; };
 		9C6F251779A9008EDBB157C108369C5D /* Interstitial.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Interstitial.swift; path = Pod/Classes/Interstitial.swift; sourceTree = "<group>"; };
 		A272A81191AAB0E1D30EC70E08EF10AA /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Pod/Frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
 		A7C1D31B5F9EF5B901C9B8A37FE981EC /* AdFooter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AdFooter-prefix.pch"; sourceTree = "<group>"; };
 		A840190F596D9C0E12B2639F85CECDE2 /* AdFooterViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdFooterViewController.swift; path = Pod/Classes/AdFooterViewController.swift; sourceTree = "<group>"; };
 		A87ABAF5D74C09EA63E3E8941428C793 /* Pods-AdFooter_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AdFooter_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B2AA895EB36BBEA3BA191D06E1B2FF30 /* Pods_AdFooter_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdFooter_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2AA895EB36BBEA3BA191D06E1B2FF30 /* Pods_AdFooter_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AdFooter_Example.framework; path = "Pods-AdFooter_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50B078543A5C82B5B6665F6B2B949F5 /* Pods-AdFooter_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AdFooter_Tests-resources.sh"; sourceTree = "<group>"; };
 		BA69C38F270A4BB1701A87F8052E379B /* AdFooter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AdFooter.xcconfig; sourceTree = "<group>"; };
 		C548ACF491C99D63AADE0C613EA6C10F /* Pods-AdFooter_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AdFooter_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -343,11 +343,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
-				TargetAttributes = {
-					09F91EBAB2F7AE282CE64C46C3E91559 = {
-						LastSwiftMigration = 1010;
-					};
-				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -440,37 +435,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		378D63E78A730754A36E7F0B7805462E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA69C38F270A4BB1701A87F8052E379B /* AdFooter.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AdFooter/AdFooter-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AdFooter/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AdFooter/AdFooter.modulemap";
-				PRODUCT_MODULE_NAME = AdFooter;
-				PRODUCT_NAME = AdFooter;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		5DE19CECB206ACCCACF04D62F93FFDA6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -526,7 +490,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -632,38 +597,6 @@
 			};
 			name = Release;
 		};
-		A2689D3BFE65B281C61281E97F13B4F0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA69C38F270A4BB1701A87F8052E379B /* AdFooter.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AdFooter/AdFooter-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AdFooter/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AdFooter/AdFooter.modulemap";
-				PRODUCT_MODULE_NAME = AdFooter;
-				PRODUCT_NAME = AdFooter;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		B2A9977786E137F64CFAF862CF202748 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F60553B1459ECF83539FE5BBC65FFA10 /* Pods-AdFooter_Tests.debug.xcconfig */;
@@ -696,6 +629,38 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		C326A67A734B25D8ABF911B0C80DC00B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA69C38F270A4BB1701A87F8052E379B /* AdFooter.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AdFooter/AdFooter-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AdFooter/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AdFooter/AdFooter.modulemap";
+				PRODUCT_MODULE_NAME = AdFooter;
+				PRODUCT_NAME = AdFooter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		DB0A57EEB05316B41CCFB9F34E31A3DC /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -764,6 +729,37 @@
 			};
 			name = Debug;
 		};
+		F50746034B62D375307AE8BA15086614 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA69C38F270A4BB1701A87F8052E379B /* AdFooter.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AdFooter/AdFooter-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AdFooter/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AdFooter/AdFooter.modulemap";
+				PRODUCT_MODULE_NAME = AdFooter;
+				PRODUCT_NAME = AdFooter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -788,8 +784,8 @@
 		6229BBADC7DE781F1120FCF374518243 /* Build configuration list for PBXNativeTarget "AdFooter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				378D63E78A730754A36E7F0B7805462E /* Debug */,
-				A2689D3BFE65B281C61281E97F13B4F0 /* Release */,
+				F50746034B62D375307AE8BA15086614 /* Debug */,
+				C326A67A734B25D8ABF911B0C80DC00B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

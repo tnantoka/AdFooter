@@ -3,13 +3,13 @@
   "version": "7.37.0",
   "summary": "AdMob on footer.",
   "description": "The swift library to add AdMob to your view controller.",
-  "homepage": "https://github.com/tnantoka/AdFooter",
+  "homepage": "https://gitlab.com/tnantoka/adfooter",
   "license": "MIT",
   "authors": {
     "tnantoka": "tnantoka@bornneet.com"
   },
   "source": {
-    "git": "https://github.com/tnantoka/AdFooter.git",
+    "git": "https://gitlab.com/tnantoka/adfooter.git",
     "tag": "7.37.0"
   },
   "social_media_url": "https://twitter.com/tnantoka",
@@ -18,5 +18,6 @@
   },
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*",
-  "vendored_frameworks": "Pod/Frameworks/GoogleMobileAds.framework"
+  "vendored_frameworks": "Pod/Frameworks/GoogleMobileAds.framework",
+  "swift_version": "4.2"
 }

@@ -15,7 +15,7 @@ open class AdFooter {
     
     open var adMobApplicationId = "" {
         didSet {
-            GADMobileAds.configure(withApplicationID: adMobAdUnitId)
+            GADMobileAds.configure(withApplicationID: adMobApplicationId)
         }
     }
     open var adMobAdUnitId = ""
