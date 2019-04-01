@@ -70,7 +70,13 @@ class AdFooterViewController: UIViewController {
                 }
             }
             if let bannerView = bannerView {
-                contentFrame.size.height -= bannerView.frame.height
+                let inset: CGFloat
+                if #available(iOS 11.0, *) {
+                    inset = UIApplication.shared.windows[0].safeAreaInsets.bottom
+                } else {
+                    inset = 0.0
+                }
+                contentFrame.size.height -= bannerView.frame.height + inset
                 bannerView.frame.origin.y = contentFrame.height
                 view.bringSubviewToFront(bannerView)
             }
