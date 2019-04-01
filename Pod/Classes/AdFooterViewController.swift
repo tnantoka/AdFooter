@@ -59,7 +59,15 @@ class AdFooterViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         var contentFrame = view.frame
-        
+
+        let inset: CGFloat
+        if #available(iOS 11.0, *) {
+            inset = UIApplication.shared.windows[0].safeAreaInsets.bottom
+        } else {
+            inset = 0.0
+        }
+        contentFrame.size.height -= inset
+
         if !hidden {
             var bannerView: UIView?
             if adMob.shown {
@@ -70,13 +78,7 @@ class AdFooterViewController: UIViewController {
                 }
             }
             if let bannerView = bannerView {
-                let inset: CGFloat
-                if #available(iOS 11.0, *) {
-                    inset = UIApplication.shared.windows[0].safeAreaInsets.bottom
-                } else {
-                    inset = 0.0
-                }
-                contentFrame.size.height -= bannerView.frame.height + inset
+                contentFrame.size.height -= bannerView.frame.height
                 bannerView.frame.origin.y = contentFrame.height
                 view.bringSubviewToFront(bannerView)
             }
