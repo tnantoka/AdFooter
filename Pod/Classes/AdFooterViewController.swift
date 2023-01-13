@@ -31,6 +31,18 @@ class AdFooterViewController: UIViewController {
         }
     }
     
+    var paused = false {
+        didSet {
+            if paused {
+                pausedShown = adMob.shown
+                adMob.shown = false
+            } else {
+                adMob.shown = pausedShown
+            }
+        }
+    }
+    var pausedShown = false
+
     init(originalController: UIViewController) {
         self.originalController = originalController
         super.init(nibName: nil, bundle: nil)

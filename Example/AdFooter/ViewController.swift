@@ -27,6 +27,10 @@ class ViewController: UIViewController {
         AdFooter.shared.hidden = !AdFooter.shared.hidden
     }
 
+    @IBAction func pauseButtonDidTap(_ sender: AnyObject) {
+        AdFooter.shared.paused = !AdFooter.shared.paused
+    }
+
     @IBAction func interstitialButtonDidTap(_ sender: Any) {
         AdFooter.shared.interstitial.present(for: self)
     }

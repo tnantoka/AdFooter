@@ -24,6 +24,11 @@ open class AdFooter {
             controllers.forEach { $0.value?.hidden = hidden }
         }
     }
+    open var paused = false {
+        didSet {
+            controllers.forEach { $0.value?.paused = paused }
+        }
+    }
     public let interstitial = Interstitial()
 
     private var controllers = [Weak<AdFooterViewController>]()
