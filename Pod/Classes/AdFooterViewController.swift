@@ -125,7 +125,6 @@ class AdFooterViewController: UIViewController {
         bannerView.adUnitID = AdFooter.shared.adMobAdUnitId
         bannerView.rootViewController = self
         let req = GADRequest()
-        req.testDevices = [kGADSimulatorID]
         bannerView.load(req)
     }
 

@@ -23,9 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let navController = storyboard.instantiateInitialViewController() as? UINavigationController {
-            // https://firebase.google.com/docs/admob/ios/quick-start
-            AdFooter.shared.adMobApplicationId = "ca-app-pub-3940256099942544~1458002511"
-
             // https://developers.google.com/admob/ios/banner
             AdFooter.shared.adMobAdUnitId = "ca-app-pub-3940256099942544/2934735716"
 

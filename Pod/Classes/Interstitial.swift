@@ -21,7 +21,6 @@ open class Interstitial: NSObject {
         adMob = GADInterstitial(adUnitID: adMobAdUnitId)
         adMob?.delegate = self
         let request = GADRequest()
-        request.testDevices = [kGADSimulatorID]
         adMob?.load(request)
     }
 

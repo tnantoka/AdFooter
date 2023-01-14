@@ -226,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -285,7 +286,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AdFooter_Example/Pods-AdFooter_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-AdFooter_Example/Pods-AdFooter_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AdFooter/AdFooter.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -294,7 +295,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdFooter_Example/Pods-AdFooter_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdFooter_Example/Pods-AdFooter_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D71A0B0DF0277197391DDFFC /* [CP] Check Pods Manifest.lock */ = {

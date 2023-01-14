@@ -13,11 +13,6 @@ import GoogleMobileAds
 open class AdFooter {
     public static let shared = AdFooter()
     
-    open var adMobApplicationId = "" {
-        didSet {
-            GADMobileAds.configure(withApplicationID: adMobApplicationId)
-        }
-    }
     open var adMobAdUnitId = ""
     open var hidden = false {
         didSet {
@@ -32,6 +27,10 @@ open class AdFooter {
     public let interstitial = Interstitial()
 
     private var controllers = [Weak<AdFooterViewController>]()
+
+    private init() {
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+    }
 
     open func wrap(_ originalController: UIViewController) -> UIViewController {
         let adFooterController = AdFooterViewController(originalController: originalController)
