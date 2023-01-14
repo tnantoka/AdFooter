@@ -9,6 +9,7 @@
 import UIKit
 
 import GoogleMobileAds
+import AppTrackingTransparency
 
 class AdFooterViewController: UIViewController {
     
@@ -22,6 +23,10 @@ class AdFooterViewController: UIViewController {
     
     var hidden = false {
         didSet {
+            if oldValue == hidden {
+                return
+            }
+
             if !hidden {
                 createBanner()
             } else {
@@ -66,9 +71,16 @@ class AdFooterViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        createBanner()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        requestIDFA { [weak self] in
+            self?.createBanner()
+        }
+    }
+
     override func viewDidLayoutSubviews() {
         var contentFrame = view.frame
 
@@ -132,6 +144,18 @@ class AdFooterViewController: UIViewController {
         adMob.shown = false
         adMob.view?.delegate = self
         adMob.view?.removeFromSuperview()
+    }
+
+    private func requestIDFA(callback: @escaping () -> Void) {
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization { _ in
+                DispatchQueue.main.async {
+                    callback()
+                }
+            }
+        } else {
+            callback()
+        }
     }
 }
 
