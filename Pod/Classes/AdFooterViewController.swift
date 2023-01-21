@@ -76,8 +76,13 @@ class AdFooterViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        requestIDFA { [weak self] in
-            self?.createBanner()
+        if adMob.view == nil {
+            requestIDFA { [weak self] in
+                AdFooter.shared.start {
+                    self?.createBanner()
+                    AdFooter.shared.interstitial.load()
+                }
+            }
         }
     }
 

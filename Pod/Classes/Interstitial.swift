@@ -16,12 +16,16 @@ open class Interstitial: NSObject {
     open var adMobAdUnitId = ""
 
     private var adMob: GADInterstitial?
+    private var loaded = false
 
     open func load() {
+        guard !adMobAdUnitId.isEmpty && !loaded else { return }
+
         adMob = GADInterstitial(adUnitID: adMobAdUnitId)
         adMob?.delegate = self
         let request = GADRequest()
         adMob?.load(request)
+        loaded = true
     }
 
     open func present(for viewController: UIViewController) {

@@ -27,9 +27,16 @@ open class AdFooter {
     public let interstitial = Interstitial()
 
     private var controllers = [Weak<AdFooterViewController>]()
+    private var started = false
 
-    private init() {
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
+    open func start(callback: @escaping () -> Void) {
+        if started {
+            callback()
+        } else {
+            GADMobileAds.sharedInstance().start { _ in
+                callback()
+            }
+        }
     }
 
     open func wrap(_ originalController: UIViewController) -> UIViewController {
