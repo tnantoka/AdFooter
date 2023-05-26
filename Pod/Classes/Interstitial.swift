@@ -15,28 +15,42 @@ open class Interstitial: NSObject {
 
     open var adMobAdUnitId = ""
 
-    private var adMob: GADInterstitial?
+    private var adMob: GADInterstitialAd?
     private var loaded = false
 
     open func load() {
         guard !adMobAdUnitId.isEmpty && !loaded else { return }
 
-        adMob = GADInterstitial(adUnitID: adMobAdUnitId)
-        adMob?.delegate = self
         let request = GADRequest()
-        adMob?.load(request)
+        GADInterstitialAd.load(withAdUnitID: adMobAdUnitId,
+                                    request: request,
+                          completionHandler: { (ad, error) in
+
+                            if let error = error {
+                              print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                              return
+                            }
+                            self.adMob = ad
+                            self.adMob?.fullScreenContentDelegate = self
+                          })
         loaded = true
     }
 
     open func present(for viewController: UIViewController) {
-        if adMob?.isReady ?? false {
-            adMob?.present(fromRootViewController: viewController)
+        guard let adMob = adMob else { return }
+        
+        do {
+            try adMob.canPresent(fromRootViewController: viewController)
+            adMob.present(fromRootViewController: viewController)
+        } catch {
+            print("error")
         }
     }
 }
 
-extension Interstitial: GADInterstitialDelegate {
-    public func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+extension Interstitial: GADFullScreenContentDelegate {
+    public func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        loaded = false
         load()
     }
 }

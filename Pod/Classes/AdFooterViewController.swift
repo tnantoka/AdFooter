@@ -165,14 +165,14 @@ class AdFooterViewController: UIViewController {
 }
 
 extension AdFooterViewController: GADBannerViewDelegate {
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
         if !hidden {
             adMob.shown = true
         }
         view.setNeedsLayout()
     }
-
-    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+    
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
         adMob.shown = false
     }
 }
