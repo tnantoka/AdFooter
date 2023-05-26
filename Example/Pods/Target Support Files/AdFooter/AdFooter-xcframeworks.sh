@@ -20,7 +20,7 @@ variant_for_slice()
   "GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator")
     echo "simulator"
     ;;
-  "GoogleMobileAds.xcframework/ios-arm64_armv7")
+  "GoogleMobileAds.xcframework/ios-arm64")
     echo ""
     ;;
   esac
@@ -32,8 +32,8 @@ archs_for_slice()
   "GoogleMobileAds.xcframework/ios-arm64_x86_64-simulator")
     echo "arm64 x86_64"
     ;;
-  "GoogleMobileAds.xcframework/ios-arm64_armv7")
-    echo "arm64 armv7"
+  "GoogleMobileAds.xcframework/ios-arm64")
+    echo "arm64"
     ;;
   esac
 }
@@ -117,5 +117,5 @@ install_xcframework() {
   echo "Copied $source to $destination"
 }
 
-install_xcframework "${PODS_ROOT}/../../Pod/Frameworks/GoogleMobileAds.xcframework" "AdFooter" "framework" "ios-arm64_x86_64-simulator" "ios-arm64_armv7"
+install_xcframework "${PODS_ROOT}/../../Pod/Frameworks/GoogleMobileAds.xcframework" "AdFooter" "framework" "ios-arm64_x86_64-simulator" "ios-arm64"
 

@@ -7,7 +7,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "AdFooter"
-  s.version          = "9.14.0"
+  s.version          = "10.5.0"
   s.summary          = "AdMob on footer."
 
 # This description is used to generate tags and improve search results.
@@ -56,4 +56,13 @@ Pod::Spec.new do |s|
     "JavaScriptCore",
     "SafariServices",
     "WebKit"
+
+  # https://github.com/CocoaPods/Specs/blob/038dcd6f160712578547305fe32868fa1ded1b51/Specs/5/9/a/Google-Mobile-Ads-SDK/10.5.0/Google-Mobile-Ads-SDK.podspec.json
+  s.static_framework = true
+  s.dependencies = {
+    "GoogleAppMeasurement": [
+      ">=7.0",
+      " <11.0"
+    ]
+  }
 end
