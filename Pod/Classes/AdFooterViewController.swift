@@ -16,11 +16,7 @@ class AdFooterViewController: UIViewController {
     private let originalController: UIViewController
     
     fileprivate var adMob = Banner<GADBannerView>()
-    
-    private var adMobSize: GADAdSize {
-        return UIApplication.shared.statusBarOrientation.isPortrait ? kGADAdSizeSmartBannerPortrait : kGADAdSizeSmartBannerLandscape
-    }
-    
+
     var hidden = false {
         didSet {
             if oldValue == hidden {
@@ -75,7 +71,6 @@ class AdFooterViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
         if adMob.view == nil {
             requestIDFA { [weak self] in
                 AdFooter.shared.start {
@@ -103,7 +98,7 @@ class AdFooterViewController: UIViewController {
                 bannerView = adMob.view
                 
                 if let adMobView = adMob.view {
-                    adMobView.adSize = adMobSize
+                    adMobView.adSize = getFullWidthAdaptiveAdSize()
                 }
             }
             if let bannerView = bannerView {
@@ -134,7 +129,7 @@ class AdFooterViewController: UIViewController {
     }
 
     private func createAdMob() {
-        let bannerView = GADBannerView(adSize: adMobSize)
+        let bannerView = GADBannerView(adSize: getFullWidthAdaptiveAdSize())
         bannerView.delegate = self
         view.addSubview(bannerView)
         adMob.view = bannerView
@@ -161,6 +156,17 @@ class AdFooterViewController: UIViewController {
         } else {
             callback()
         }
+    }
+
+    func getFullWidthAdaptiveAdSize() -> GADAdSize {
+      let frame = { () -> CGRect in
+        if #available(iOS 11.0, *) {
+          return view.frame.inset(by: view.safeAreaInsets)
+        } else {
+          return view.frame
+        }
+      }()
+      return GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(frame.size.width)
     }
 }
 
