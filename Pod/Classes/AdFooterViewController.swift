@@ -147,6 +147,13 @@ class AdFooterViewController: UIViewController {
     }
 
     private func requestIDFA(callback: @escaping () -> Void) {
+        if UIApplication.shared.applicationState != .active {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
+                self?.requestIDFA(callback: callback)
+            }
+            return
+        }
+
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization { _ in
                 DispatchQueue.main.async {
