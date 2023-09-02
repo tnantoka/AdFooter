@@ -10,6 +10,7 @@ import UIKit
 
 import GoogleMobileAds
 import AppTrackingTransparency
+import UserMessagingPlatform
 
 class AdFooterViewController: UIViewController {
     
@@ -72,7 +73,7 @@ class AdFooterViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if adMob.view == nil {
-            requestIDFA { [weak self] in
+            requestTracking { [weak self] in
                 AdFooter.shared.start {
                     self?.createBanner()
                     AdFooter.shared.interstitial.load()
@@ -146,14 +147,20 @@ class AdFooterViewController: UIViewController {
         adMob.view?.removeFromSuperview()
     }
 
-    private func requestIDFA(callback: @escaping () -> Void) {
+    private func requestTracking(callback: @escaping () -> Void) {
         if UIApplication.shared.applicationState != .active {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
-                self?.requestIDFA(callback: callback)
+                self?.requestTracking(callback: callback)
             }
             return
         }
+        
+        requestGDPR { [weak self] in
+            self?.requestIDFA(callback: callback)
+        }
+    }
 
+    private func requestIDFA(callback: @escaping () -> Void) {
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization { _ in
                 DispatchQueue.main.async {
@@ -162,6 +169,34 @@ class AdFooterViewController: UIViewController {
             }
         } else {
             callback()
+        }
+    }
+
+    private func requestGDPR(callback: @escaping () -> Void) {
+        let parameters = UMPRequestParameters()
+        parameters.tagForUnderAgeOfConsent = false
+
+        #if DEBUG
+            let debugSettings = UMPDebugSettings()
+            debugSettings.geography = .EEA
+            parameters.debugSettings = debugSettings
+        #endif
+
+        UMPConsentInformation.sharedInstance.requestConsentInfoUpdate(with: parameters) { [weak self] requestConsentError in
+            guard let self else { return }
+            guard requestConsentError == nil else { return }
+
+            UMPConsentForm.loadAndPresentIfRequired(from: self) { loadAndPresentError in
+                guard loadAndPresentError == nil else { return }
+
+                if UMPConsentInformation.sharedInstance.canRequestAds {
+                  callback()
+                }
+            }
+
+            if UMPConsentInformation.sharedInstance.canRequestAds {
+              callback()
+            }
         }
     }
 
