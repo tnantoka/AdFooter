@@ -1,5 +1,5 @@
 PODS:
-  - AdFooter (10.5.0):
+  - AdFooter (10.10.0):
     - GoogleAppMeasurement (< 11.0, >= 7.0)
     - GoogleUserMessagingPlatform (>= 2.1)
   - GoogleAppMeasurement (8.15.0):
@@ -63,7 +63,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AdFooter: e12ceb9a204c95b1d8fe91316d37365dbc7bf237
+  AdFooter: 57eed98d3cb9ac76ba712db7e059cf0bf02966b4
   GoogleAppMeasurement: 4c19f031220c72464d460c9daa1fb5d1acce958e
   GoogleUserMessagingPlatform: dce302b8f1b84d6e945812ee7a15c3f65a102cbf
   GoogleUtilities: 9aa0ad5a7bc171f8bae016300bfcfa3fb8425749
