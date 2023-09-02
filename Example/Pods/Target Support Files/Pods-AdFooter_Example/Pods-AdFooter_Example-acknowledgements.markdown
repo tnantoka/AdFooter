@@ -30,7 +30,7 @@ Copyright 2021 Google
 
 ## GoogleUserMessagingPlatform
 
-Copyright 2022 Google
+Copyright 2023 Google
 
 ## GoogleUtilities
 

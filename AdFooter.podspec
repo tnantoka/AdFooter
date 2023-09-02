@@ -65,7 +65,7 @@ Pod::Spec.new do |s|
       " <11.0"
     ],
     "GoogleUserMessagingPlatform": [
-      ">= 1.1"
+      ">= 2.1"
     ]
   }
 end
