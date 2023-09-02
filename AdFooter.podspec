@@ -63,6 +63,9 @@ Pod::Spec.new do |s|
     "GoogleAppMeasurement": [
       ">=7.0",
       " <11.0"
+    ],
+    "GoogleUserMessagingPlatform": [
+      ">= 1.1"
     ]
   }
 end

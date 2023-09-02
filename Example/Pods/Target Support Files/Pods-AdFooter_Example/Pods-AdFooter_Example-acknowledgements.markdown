@@ -28,6 +28,10 @@ THE SOFTWARE.
 
 Copyright 2021 Google
 
+## GoogleUserMessagingPlatform
+
+Copyright 2022 Google
+
 ## GoogleUtilities
 
 
