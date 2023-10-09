@@ -24,6 +24,8 @@ open class AdFooter {
             controllers.forEach { $0.value?.paused = paused }
         }
     }
+    open var debugGDPR = true
+
     public let interstitial = Interstitial()
 
     private var controllers = [Weak<AdFooterViewController>]()

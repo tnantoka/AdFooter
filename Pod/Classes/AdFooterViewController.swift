@@ -177,9 +177,11 @@ class AdFooterViewController: UIViewController {
         parameters.tagForUnderAgeOfConsent = false
 
         #if DEBUG
-            let debugSettings = UMPDebugSettings()
-            debugSettings.geography = .EEA
-            parameters.debugSettings = debugSettings
+            if AdFooter.shared.debugGDPR {
+                let debugSettings = UMPDebugSettings()
+                debugSettings.geography = .EEA
+                parameters.debugSettings = debugSettings
+            }
         #endif
 
         UMPConsentInformation.sharedInstance.requestConsentInfoUpdate(with: parameters) { [weak self] requestConsentError in
