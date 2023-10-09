@@ -1,6 +1,6 @@
 {
   "name": "AdFooter",
-  "version": "10.10.0",
+  "version": "10.12.0",
   "summary": "AdMob on footer.",
   "description": "The swift library to add AdMob to your view controller.",
   "homepage": "https://gitlab.com/tnantoka/adfooter",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://gitlab.com/tnantoka/adfooter.git",
-    "tag": "10.10.0"
+    "tag": "10.12.0"
   },
   "social_media_url": "https://twitter.com/tnantoka",
   "platforms": {
