@@ -7,7 +7,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "AdFooter"
-  s.version          = "10.12.0"
+  s.version          = "12.3.0"
   s.summary          = "AdMob on footer."
 
 # This description is used to generate tags and improve search results.
@@ -26,46 +26,16 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://gitlab.com/tnantoka/adfooter.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/tnantoka'
 
-  s.platform     = :ios, '9.0'
+  s.platform     = :ios, '12.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
 
   s.swift_version = '4.2'
 
-  s.vendored_frameworks = 'Pod/Frameworks/GoogleMobileAds.xcframework'
-
-  # https://github.com/CocoaPods/Specs/blob/dba355a5020f4acb6d61c33d1543e18023e12b68/Specs/5/9/a/Google-Mobile-Ads-SDK/7.69.0/Google-Mobile-Ads-SDK.podspec.json
-  s.frameworks =
-    "AudioToolbox",
-    "AVFoundation",
-    "CFNetwork",
-    "CoreGraphics",
-    "CoreMedia",
-    "CoreTelephony",
-    "CoreVideo",
-    "MediaPlayer",
-    "MessageUI",
-    "MobileCoreServices",
-    "QuartzCore",
-    "Security",
-    "StoreKit",
-    "SystemConfiguration"
-  s.weak_frameworks =
-    "AdSupport",
-    "JavaScriptCore",
-    "SafariServices",
-    "WebKit"
-
-  # https://github.com/CocoaPods/Specs/blob/038dcd6f160712578547305fe32868fa1ded1b51/Specs/5/9/a/Google-Mobile-Ads-SDK/10.5.0/Google-Mobile-Ads-SDK.podspec.json
-  s.static_framework = true
   s.dependencies = {
-    "GoogleAppMeasurement": [
-      ">=7.0",
-      " <11.0"
-    ],
-    "GoogleUserMessagingPlatform": [
-      ">= 2.1"
+    "Google-Mobile-Ads-SDK": [
+      "12.3.0"
     ]
   }
 end

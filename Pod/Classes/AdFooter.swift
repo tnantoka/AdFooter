@@ -35,7 +35,7 @@ open class AdFooter {
         if started {
             callback()
         } else {
-            GADMobileAds.sharedInstance().start { _ in
+            MobileAds.shared.start { _ in
                 callback()
             }
         }

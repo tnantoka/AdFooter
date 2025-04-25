@@ -16,7 +16,7 @@ class AdFooterViewController: UIViewController {
     
     private let originalController: UIViewController
     
-    fileprivate var adMob = Banner<GADBannerView>()
+    fileprivate var adMob = Banner<BannerView>()
 
     var hidden = false {
         didSet {
@@ -130,14 +130,14 @@ class AdFooterViewController: UIViewController {
     }
 
     private func createAdMob() {
-        let bannerView = GADBannerView(adSize: getFullWidthAdaptiveAdSize())
+        let bannerView = BannerView(adSize: getFullWidthAdaptiveAdSize())
         bannerView.delegate = self
         view.addSubview(bannerView)
         adMob.view = bannerView
         
         bannerView.adUnitID = AdFooter.shared.adMobAdUnitId
         bannerView.rootViewController = self
-        let req = GADRequest()
+        let req = Request()
         bannerView.load(req)
     }
 
@@ -173,36 +173,36 @@ class AdFooterViewController: UIViewController {
     }
 
     private func requestGDPR(callback: @escaping () -> Void) {
-        let parameters = UMPRequestParameters()
-        parameters.tagForUnderAgeOfConsent = false
+        let parameters = RequestParameters()
+        parameters.isTaggedForUnderAgeOfConsent = false
 
         #if DEBUG
             if AdFooter.shared.debugGDPR {
-                let debugSettings = UMPDebugSettings()
+                let debugSettings = DebugSettings()
                 debugSettings.geography = .EEA
                 parameters.debugSettings = debugSettings
             }
         #endif
 
-        UMPConsentInformation.sharedInstance.requestConsentInfoUpdate(with: parameters) { [weak self] requestConsentError in
+        ConsentInformation.shared.requestConsentInfoUpdate(with: parameters) { [weak self] requestConsentError in
             guard let self else { return }
             guard requestConsentError == nil else { return }
 
-            UMPConsentForm.loadAndPresentIfRequired(from: self) { loadAndPresentError in
+            ConsentForm.loadAndPresentIfRequired(from: self) { loadAndPresentError in
                 guard loadAndPresentError == nil else { return }
 
-                if UMPConsentInformation.sharedInstance.canRequestAds {
+                if ConsentInformation.shared.canRequestAds {
                   callback()
                 }
             }
 
-            if UMPConsentInformation.sharedInstance.canRequestAds {
+            if ConsentInformation.shared.canRequestAds {
               callback()
             }
         }
     }
 
-    func getFullWidthAdaptiveAdSize() -> GADAdSize {
+    func getFullWidthAdaptiveAdSize() -> AdSize {
       let frame = { () -> CGRect in
         if #available(iOS 11.0, *) {
           return view.frame.inset(by: view.safeAreaInsets)
@@ -210,19 +210,19 @@ class AdFooterViewController: UIViewController {
           return view.frame
         }
       }()
-      return GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(frame.size.width)
+        return currentOrientationAnchoredAdaptiveBanner(width: frame.size.width)
     }
 }
 
-extension AdFooterViewController: GADBannerViewDelegate {
-    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+extension AdFooterViewController: BannerViewDelegate {
+    func bannerViewDidReceiveAd(_ bannerView: BannerView) {
         if !hidden {
             adMob.shown = true
         }
         view.setNeedsLayout()
     }
     
-    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+    func bannerView(_ bannerView: BannerView, didFailToReceiveAdWithError error: Error) {
         adMob.shown = false
     }
 }

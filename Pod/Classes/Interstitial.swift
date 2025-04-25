@@ -15,14 +15,14 @@ open class Interstitial: NSObject {
 
     open var adMobAdUnitId = ""
 
-    private var adMob: GADInterstitialAd?
+    private var adMob: InterstitialAd?
     private var loaded = false
 
     open func load() {
         guard !adMobAdUnitId.isEmpty && !loaded else { return }
 
-        let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID: adMobAdUnitId,
+        let request = Request()
+        InterstitialAd.load(with: adMobAdUnitId,
                                     request: request,
                           completionHandler: { (ad, error) in
 
@@ -40,16 +40,16 @@ open class Interstitial: NSObject {
         guard let adMob = adMob else { return }
         
         do {
-            try adMob.canPresent(fromRootViewController: viewController)
-            adMob.present(fromRootViewController: viewController)
+            try adMob.canPresent(from: viewController)
+            adMob.present(from: viewController)
         } catch {
             print("error")
         }
     }
 }
 
-extension Interstitial: GADFullScreenContentDelegate {
-    public func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+extension Interstitial: FullScreenContentDelegate {
+    public func adDidDismissFullScreenContent(_ ad: FullScreenPresentingAd) {
         loaded = false
         load()
     }
