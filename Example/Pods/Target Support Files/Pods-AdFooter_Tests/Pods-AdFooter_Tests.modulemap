@@ -1,6 +1,0 @@
-framework module Pods_AdFooter_Tests {
-  umbrella header "Pods-AdFooter_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}
