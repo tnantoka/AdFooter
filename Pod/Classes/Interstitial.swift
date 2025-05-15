@@ -24,8 +24,9 @@ open class Interstitial: NSObject {
         let request = Request()
         InterstitialAd.load(with: adMobAdUnitId,
                                     request: request,
-                          completionHandler: { (ad, error) in
-
+                          completionHandler: { [weak self] ad, error in
+                            guard let self else { return }
+            
                             if let error = error {
                               print("Failed to load interstitial ad with error: \(error.localizedDescription)")
                               return

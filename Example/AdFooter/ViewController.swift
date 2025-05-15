@@ -37,19 +37,19 @@ class ViewController: UIViewController {
     }
 
     @IBAction func rewardedButtonDidTap(_ sender: Any) {
-        AdFooter.shared.rewarded.present(for: self) {
-            self.showAlert(message: "Reward earned")
-            self.loadRewarded()
-        } didCancel: {
-            self.loadRewarded()
-        } didFail: { error in
-            self.showAlert(message: error.localizedDescription)
+        AdFooter.shared.rewarded.present(for: self) { [weak self] in
+            self?.showAlert(message: "Reward earned")
+            self?.loadRewarded()
+        } didCancel: { [weak self] in
+            self?.loadRewarded()
+        } didFail: { [weak self] error in
+            self?.showAlert(message: error.localizedDescription)
         }
     }
     
     private func loadRewarded() {
-        AdFooter.shared.rewarded.load { error in
-            self.showAlert(message: error.localizedDescription)
+        AdFooter.shared.rewarded.load { [weak self] error in
+            self?.showAlert(message: error.localizedDescription)
         }
     }
     

@@ -25,7 +25,9 @@ open class Rewarded: NSObject {
         guard !adMobAdUnitId.isEmpty && !loaded else { return }
 
         let request = Request()
-        RewardedAd.load(with: adMobAdUnitId, request: request) { ad, error in
+        RewardedAd.load(with: adMobAdUnitId, request: request) { [weak self] ad, error in
+            guard let self else { return }
+            
             if let error = error {
                 print("Failed to load rewarded ad with error: \(error.localizedDescription)")
                 didFail(error)
@@ -46,8 +48,8 @@ open class Rewarded: NSObject {
         
         do {
             try adMob.canPresent(from: viewController)
-            adMob.present(from: viewController) {
-                self.earned = true
+            adMob.present(from: viewController) { [weak self] in
+                 self?.earned = true
             }
         } catch {
             print("error")
@@ -55,11 +57,11 @@ open class Rewarded: NSObject {
     }
     
     private func reset() {
-        self.adMob = nil
-        self.loaded = false
-        self.didEarn = {}
-        self.didCancel = {}
-        self.didFail = { _ in }
+        adMob = nil
+        loaded = false
+        didEarn = {}
+        didCancel = {}
+        didFail = { _ in }
     }
 }
 
