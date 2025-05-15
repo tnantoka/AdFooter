@@ -27,6 +27,7 @@ open class AdFooter {
     open var debugGDPR = true
 
     public let interstitial = Interstitial()
+    public let rewarded = Rewarded()
 
     private var controllers = [Weak<AdFooterViewController>]()
     private var started = false

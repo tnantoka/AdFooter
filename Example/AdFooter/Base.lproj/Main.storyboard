@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AeJ-ve-ux7">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AeJ-ve-ux7">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,27 +20,34 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fjN-ah-2P3">
-                                <rect key="frame" x="153" y="288.5" width="69" height="90"/>
+                                <rect key="frame" x="153" y="273.5" width="69" height="120"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6oM-nu-joy">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6oM-nu-joy">
                                         <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
                                         <state key="normal" title="Toggle Ad"/>
                                         <connections>
                                             <action selector="toggleButtonDidTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1Gv-BM-GAd"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1s-IX-0Fq">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1s-IX-0Fq">
                                         <rect key="frame" x="0.0" y="30" width="69" height="30"/>
                                         <state key="normal" title="Pause Ad"/>
                                         <connections>
                                             <action selector="pauseButtonDidTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nTA-ND-3DQ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3A4-LV-wmx">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3A4-LV-wmx">
                                         <rect key="frame" x="0.0" y="60" width="69" height="30"/>
                                         <state key="normal" title="Interstitial"/>
                                         <connections>
                                             <action selector="interstitialButtonDidTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Lqx-4C-flY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMQ-PR-1zW">
+                                        <rect key="frame" x="0.0" y="90" width="69" height="30"/>
+                                        <state key="normal" title="Rewarded"/>
+                                        <connections>
+                                            <action selector="rewardedButtonDidTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rKN-tb-AgD"/>
                                         </connections>
                                     </button>
                                 </subviews>

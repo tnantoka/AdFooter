@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         AdFooter.shared.interstitial.load()
+        loadRewarded()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +34,40 @@ class ViewController: UIViewController {
 
     @IBAction func interstitialButtonDidTap(_ sender: Any) {
         AdFooter.shared.interstitial.present(for: self)
+    }
+
+    @IBAction func rewardedButtonDidTap(_ sender: Any) {
+        AdFooter.shared.rewarded.present(for: self) {
+            self.showAlert(message: "Reward earned")
+            self.loadRewarded()
+        } didCancel: {
+            self.loadRewarded()
+        } didFail: { error in
+            self.showAlert(message: error.localizedDescription)
+        }
+    }
+    
+    private func loadRewarded() {
+        AdFooter.shared.rewarded.load { error in
+            self.showAlert(message: error.localizedDescription)
+        }
+    }
+    
+    private func showAlert(message: String) {
+        let alertController = UIAlertController(
+            title: message,
+            message: nil,
+            preferredStyle: .alert
+        )
+
+        alertController.addAction(
+            UIAlertAction(
+                title: NSLocalizedString("OK", comment: ""),
+                style: .default
+            )
+        )
+
+        present(alertController, animated: true)
     }
 }
 

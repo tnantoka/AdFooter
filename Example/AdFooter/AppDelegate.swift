@@ -28,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             // https://firebase.google.com/docs/admob/ios/interstitial
             AdFooter.shared.interstitial.adMobAdUnitId = "ca-app-pub-3940256099942544/4411468910"
+            
+            // https://developers.google.com/admob/android/test-ads
+            AdFooter.shared.rewarded.adMobAdUnitId = "ca-app-pub-3940256099942544/5224354917"
+            
             window?.rootViewController = AdFooter.shared.wrap(navController)
         }
     
