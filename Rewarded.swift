@@ -21,7 +21,7 @@ open class Rewarded: NSObject {
     private var didCancel: () -> Void = {}
     private var didFail: (Error) -> Void = { _ in }
 
-    open func load(didFail: @escaping (Error) -> Void) {
+    open func load(didLoad: @escaping () -> Void, didFail: @escaping (Error) -> Void) {
         guard !adMobAdUnitId.isEmpty && !loaded else { return }
 
         let request = Request()
@@ -35,6 +35,7 @@ open class Rewarded: NSObject {
             }
             self.adMob = ad
             self.adMob?.fullScreenContentDelegate = self
+            didLoad()
         }
         loaded = true
     }

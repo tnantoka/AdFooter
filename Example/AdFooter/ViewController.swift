@@ -48,7 +48,8 @@ class ViewController: UIViewController {
     }
     
     private func loadRewarded() {
-        AdFooter.shared.rewarded.load { [weak self] error in
+        AdFooter.shared.rewarded.load {
+        } didFail: { [weak self] error in
             self?.showAlert(message: error.localizedDescription)
         }
     }
