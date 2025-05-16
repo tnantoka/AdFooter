@@ -7,14 +7,14 @@
 //
 
 struct Banner<T: UIView> {
-    var shown = false {
-        didSet {
-            view?.isHidden = !shown
-        }
+  var shown = false {
+    didSet {
+      view?.isHidden = !shown
     }
-    var view: T? {
-        didSet {
-            view?.isHidden = true
-        }
+  }
+  var view: T? {
+    didSet {
+      view?.isHidden = true
     }
+  }
 }
