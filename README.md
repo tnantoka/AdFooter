@@ -4,6 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/AdFooter.svg?style=flat)](http://cocoapods.org/pods/AdFooter)
 [![Platform](https://img.shields.io/cocoapods/p/AdFooter.svg?style=flat)](http://cocoapods.org/pods/AdFooter)
 
+![](./screenshot.png)
 
 ## Return to GitHub
 
