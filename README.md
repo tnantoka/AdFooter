@@ -54,8 +54,8 @@ git "https://gitlab.com/tnantoka/adfooter"
 
 ## AddFooter on App Store
 
-- http://remaining.bornneet.com/
-- http://140note.bornneet.com/
+- https://gradientor.tnantoka.com/
+- https://remaining.bornneet.com/
 
 ## Author
 
@@ -68,4 +68,3 @@ https://github.com/chrisjp/CJPAdController
 ## License
 
 AdFooter is available under the MIT license. See the LICENSE file for more info.
-**`GoogleMobileAds.framework` has its own license!**
