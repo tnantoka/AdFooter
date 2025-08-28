@@ -4,6 +4,17 @@
 [![License](https://img.shields.io/cocoapods/l/AdFooter.svg?style=flat)](http://cocoapods.org/pods/AdFooter)
 [![Platform](https://img.shields.io/cocoapods/p/AdFooter.svg?style=flat)](http://cocoapods.org/pods/AdFooter)
 
+
+## Return to GitHub
+
+https://github.com/tnantoka/adfooter
+
+We previously moved to GitLab due to file size limitations, but have now returned to GitHub after removing the Frameworks directory, which resolved the size issue.
+
+If you need to access previous versions, please refer to the GitLab repository:
+
+https://gitlab.com/tnantoka/adfooter
+
 ## Usage
 
 ```swift
