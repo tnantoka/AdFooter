@@ -44,13 +44,7 @@ AdFooter is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'AdFooter'
-```
-
-## Carthage
-
-```swift
-git "https://gitlab.com/tnantoka/adfooter"
+pod 'AdFooter', git: 'https://githab.com/tnantoka/AdFooter.git'
 ```
 
 ## AddFooter on App Store
